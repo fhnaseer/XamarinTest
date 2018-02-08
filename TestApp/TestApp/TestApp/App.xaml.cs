@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TestApp.Views;
+using Xamarin.Forms;
 
 namespace TestApp
 {
