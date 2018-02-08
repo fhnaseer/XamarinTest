@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using TestApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -6,13 +7,17 @@ namespace TestApp.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(Map map)
+        public MainPageViewModel(CustomMap map)
         {
             _map = map;
-            _map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(37, -122), Distance.FromMiles(1)));
+
+            var points = FakeData.GetFieldCoordinates();
+            foreach (var point in points)
+                _map.ShapeCoordinates.Add(new Position(point.Geometry.Coordinates[0], point.Geometry.Coordinates[1]));
+            _map.MoveToRegion(MapSpan.FromCenterAndRadius(FakeData.GetStartingPosition(), Distance.FromMiles(0.1)));
         }
 
-        private readonly Map _map;
+        private readonly CustomMap _map;
 
 
         private ICommand _streetViewCommand;

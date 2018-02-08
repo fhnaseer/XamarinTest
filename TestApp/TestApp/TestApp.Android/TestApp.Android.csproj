@@ -60,6 +60,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomMapRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestApp\TestApp.csproj">
-      <Project>{9F3F7695-BE3E-4900-AA29-483B1AF45353}</Project>
+      <Project>{3ecab871-984d-4a4c-996c-3f879f42b5ad}</Project>
       <Name>TestApp</Name>
     </ProjectReference>
   </ItemGroup>
